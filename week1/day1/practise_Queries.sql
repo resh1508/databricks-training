@@ -31,5 +31,30 @@ SELECT * FROM Employee
 WHERE LENGTH(name) = 9;
 
 --10.Select employees whose names have 'o' as the second character.
-SELECT * FROM Employee
-WHERE 
+SELECT * 
+FROM Employee
+WHERE name LIKE '_o%';
+
+--11.Select employees hired in the year 2020.
+SELECT * 
+FROM Employee
+WHERE hire_date like '2020%';
+
+--12.Select employees hired in January of any year.
+SELECT * 
+FROM Employee
+WHERE hire_date like '%01___';
+
+--13.Select employees hired before 2019.
+SELECT *
+FROM Employee
+WHERE hire_date < '2019-01-01';
+
+--14.Select employees hired on or after March 1, 2021.
+SELECT *
+FROM Employee
+WHERE hire_date >= '2021-03-01';
+
+--15.Select employees hired in the last 2 years.
+
+
