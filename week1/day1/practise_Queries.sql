@@ -105,6 +105,36 @@ GROUP BY department_id;
 
 --25.Select the department with the highest average salary.
 
+--26.Select departments with more than 2 employees.
+SELECT department_id, COUNT(emp_id)
+FROM Employee
+GROUP BY department_id HAVING COUNT(emp_id)>2;
+
+--27.Select departments with an average salary greater than 55000.
+SELECT department_id, AVG(salary)
+FROM Employee
+GROUP BY department_id HAVING AVG(salary)> 55000;
+
+--28.Select years with more than 1 employee hired.
+SELECT YEAR(hire_date), COUNT(hire_date)
+FROM Employee
+GROUP BY YEAR(hire_date) HAVING COUNT(hire_date) > 1;
+
+--29.Select departments with a total salary expense less than 100000.
+SELECT department_id, SUM(salary)
+FROM Employee
+GROUP BY department_id HAVING SUM(salary) < 100000;
+
+--30.Select departments with the maximum salary above 75000.
+SELECT department_id, MAX(salary)
+FROM Employee
+GROUP BY department_id HAVING MAX(salary) > 75000;
+
+--31.Select all employees ordered by their salary in ascending order.
+
+
+
+
 
 
 
