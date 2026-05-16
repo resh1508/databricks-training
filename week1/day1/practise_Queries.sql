@@ -56,5 +56,44 @@ FROM Employee
 WHERE hire_date >= '2021-03-01';
 
 --15.Select employees hired in the last 2 years.
+SELECT *
+FROM Employee
+WHERE hire_date BETWEEN '2020-01-01' AND '2022-05-18';
+
+--16.Select the total salary of all employees.
+SELECT SUM(salary)
+FROM Employee;
+
+--17.Select the average salary of employees.
+SELECT AVG(Salary)
+FROM Employee;
+
+--18.Select the minimum salary in the Employee table.
+SELECT MIN(Salary)
+FROM Employee;
+
+--19.Select the number of employees in each department.
+SELECT department_id, COUNT(emp_id)
+FROM Employee
+GROUP BY department_id;
+
+--20.select the average salary of employees in each department.
+SELECT department_id, AVG(salary)
+FROM Employee
+GROUP BY department_id;
+
+
+--21.Select the total salary for each department.
+SELECT department_id, SUM(salary)
+FROM Employee
+GROUP BY department_id;
+
+--22.Select the average age of employees in each department.
+SELECT department_id, AVG(age)
+FROM Employee
+GROUP BY department_id;
+
+--23.Select the number of employees hired in each year.
+
 
 
