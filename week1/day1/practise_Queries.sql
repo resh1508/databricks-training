@@ -131,6 +131,32 @@ FROM Employee
 GROUP BY department_id HAVING MAX(salary) > 75000;
 
 --31.Select all employees ordered by their salary in ascending order.
+SELECT * 
+FROM Employee
+ORDER BY salary;
+
+--32.Select all employees ordered by their age in descending order.
+SELECT * 
+FROM Employee
+ORDER BY age DESC;
+
+--33.Select all employees ordered by their hire date in ascending order.
+SELECT * 
+FROM Employee
+ORDER BY hire_date;
+
+--34.Select employees ordered by their department and then by their salary.
+SELECT * 
+FROM Employee
+ORDER BY department_id, salary;
+
+--35.Select departments ordered by the total salary of their employees.
+SELECT department_id, SUM(salary) AS total_salary
+FROM Employee
+GROUP BY department_id
+ORDER BY total_salary;
+
+--36.Select employee names along with their department names.
 
 
 
