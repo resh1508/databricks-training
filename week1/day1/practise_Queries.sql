@@ -94,6 +94,17 @@ FROM Employee
 GROUP BY department_id;
 
 --23.Select the number of employees hired in each year.
+SELECT DISTINCT(YEAR(hire_date)), COUNT(emp_id)
+FROM Employee
+GROUP BY YEAR(hire_date);
+
+--24.Select the highest salary in each department.
+SELECT department_id, MAX(salary)
+FROM Employee
+GROUP BY department_id;
+
+--25.Select the department with the highest average salary.
+
 
 
 
