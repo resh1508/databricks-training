@@ -157,8 +157,27 @@ GROUP BY department_id
 ORDER BY total_salary;
 
 --36.Select employee names along with their department names.
+SELECT Employee.name, Department.name
+FROM Employee
+INNER JOIN Department
+ON Employee.department_id = Department.department_id;
+
+--37.Select project names along with the department names they belong to.
+SELECT Project.name, Department.name
+FROM Project
+INNER JOIN Department
+ON Project.department_id = Department.department_id;
+
+--38.Select employee names and their corresponding project names.
+SELECT Employee.name, Project.name
+FROM Employee
+INNER JOIN Project
+ON Employee.department_id = Project.department_id;
+
+--39.Select all employees and their departments, including those without a department.
 
 
+--40.Select all departments and their employees, including departments without employees.
 
 
 
