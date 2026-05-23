@@ -33,3 +33,23 @@ RIGHT JOIN enrollments
 ON students.student_id = enrollments.student_id;
 
 --6.Find students who are not enrolled in any course.
+SELECT *
+FROM students
+LEFT JOIN enrollments
+ON students.student_id = enrollments.student_id
+WHERE enrollments.student_id IS NULL;
+
+--7. Use a FULL OUTER JOIN to display all students and enrollments, including unmatched rows from both tables
+SELECT *
+FROM students
+LEFT OUTER JOIN enrollments
+ON students.student_id = enrollments.student_id;
+
+--8. Find all courses that have never appeared in the enrollments table.
+SELECT *
+FROM courses
+LEFT JOIN enrollments
+ON courses.course_id = enrollments.course_id
+WHERE enrollments.course_id IS NULL;
+
+--9. Display all instructors and courses using a FULL OUTER JOIN and identify unmatched rows.
