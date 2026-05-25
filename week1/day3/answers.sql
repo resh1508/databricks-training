@@ -53,3 +53,18 @@ ON courses.course_id = enrollments.course_id
 WHERE enrollments.course_id IS NULL;
 
 --9. Display all instructors and courses using a FULL OUTER JOIN and identify unmatched rows.
+SELECT *
+FROM instructors
+LEFT OUTER JOIN courses
+ON instructors.instructor_id = courses.instructor_id
+
+UNION
+
+SELECT *
+FROM instructors
+RIGHT OUTER JOIN courses
+ON instructors.instructor_id = courses.instructor_id
+WHERE instructors.instructor_id IS NULL
+OR courses.course_id IS NULL;
+
+--10. Create a report showing: student name, course name, and instructor name. Include rows even if course or instructor information is missing
