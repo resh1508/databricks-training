@@ -68,3 +68,11 @@ WHERE instructors.instructor_id IS NULL
 OR courses.course_id IS NULL;
 
 --10. Create a report showing: student name, course name, and instructor name. Include rows even if course or instructor information is missing
+SELECT student_name, course_name, instructor_name
+FROM students
+LEFT JOIN enrollments
+ON students.student_id = enrollments.student_id
+LEFT JOIN courses
+ON enrollments.course_id = courses.course_id
+LEFT JOIN instructors
+ON courses.instructor_id = instructors.instructor_id;
